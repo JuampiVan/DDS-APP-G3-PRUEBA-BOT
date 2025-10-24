@@ -1,0 +1,5 @@
+org\example\ddsapptelegrambot\app\ProcesadorPdI.class
+org\example\ddsapptelegrambot\app\dtos\PdIDTO.class
+org\example\ddsapptelegrambot\service\ProcesadorPdIService.class
+org\example\ddsapptelegrambot\DdsAppTelegramBotApplication.class
+org\example\ddsapptelegrambot\app\TelegramBot.class
