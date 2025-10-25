@@ -1,8 +1,6 @@
 package org.example.ddsapptelegrambot.app;
 
-import jakarta.ws.rs.ext.ParamConverter;
 import org.example.ddsapptelegrambot.command.*;
-import org.example.ddsapptelegrambot.service.procesadorPdi.ProcesadorPdIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
@@ -11,8 +9,6 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-
-import java.util.List;
 
 
 @Component

@@ -5,17 +5,31 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Component
 public class ProcesadorPdI {
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private static final String BASE_URL = "https://dds-app-procesador.onrender.com/pdis/";
+    private static final String BASE_URL = "https://dds-app-procesador.onrender.com/pdis";
 
     public PdIDTO obtenerPdiPorId(Long id) {
         try {
-            return restTemplate.getForObject(BASE_URL + id, PdIDTO.class);
+            return restTemplate.getForObject(BASE_URL +"/"+ id, PdIDTO.class);
         } catch (HttpClientErrorException e) {
             System.out.println("Error al consultar el PdI: " + e.getStatusCode());
+            return null;
+        } catch (Exception e) {
+            System.out.println("Error inesperado: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public List<PdIDTO> obtenerPdisPorHecho(String hechoId) {
+        try {
+            return restTemplate.getForObject(BASE_URL + "?hecho=" + hechoId, List.class);
+        }catch (HttpClientErrorException e) {
+            System.out.println("Error al consultar el Hecho: " + e.getStatusCode());
             return null;
         } catch (Exception e) {
             System.out.println("Error inesperado: " + e.getMessage());

@@ -1,11 +1,9 @@
 package org.example.ddsapptelegrambot.command;
 
+import org.example.ddsapptelegrambot.app.BotMessenger;
 import org.example.ddsapptelegrambot.service.procesadorPdi.ProcesadorPdIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Component
 public class ObtenerPdiCommand implements BotCommand {
