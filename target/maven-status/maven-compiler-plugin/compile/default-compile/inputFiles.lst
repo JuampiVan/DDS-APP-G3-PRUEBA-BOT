@@ -1,5 +1,26 @@
-C:\Users\Juampi\Documents\GitHub\DDS-APP-G3-BOT\src\main\java\org\example\ddsapptelegrambot\app\dtos\PdIDTO.java
-C:\Users\Juampi\Documents\GitHub\DDS-APP-G3-BOT\src\main\java\org\example\ddsapptelegrambot\app\ProcesadorPdI.java
-C:\Users\Juampi\Documents\GitHub\DDS-APP-G3-BOT\src\main\java\org\example\ddsapptelegrambot\app\TelegramBot.java
-C:\Users\Juampi\Documents\GitHub\DDS-APP-G3-BOT\src\main\java\org\example\ddsapptelegrambot\DdsAppTelegramBotApplication.java
-C:\Users\Juampi\Documents\GitHub\DDS-APP-G3-BOT\src\main\java\org\example\ddsapptelegrambot\service\ProcesadorPdIService.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\app\BotMessenger.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\app\TelegramBot.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\AgregarPdiCommand.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\BotCommand.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\CommandDispatcher.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\CrearSolicitudCommand.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\HechosPorColeccion.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\ListarHechoPorId.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\ObtenerPdiCommand.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\PostearHechoAFuente.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\StartCommand.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\config\AppConfig.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\DdsAppTelegramBotApplication.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\dtos\CategoriaHechoEnum.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\dtos\EstadoSolicitudBorradoEnum.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\dtos\HechoDTO.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\dtos\PdIDTO.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\dtos\SolicitudDTO.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\agregador\AgregadorClient.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\agregador\AgregadorService.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\fuente\FuenteClient.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\fuente\FuenteService.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\procesadorPdi\ProcesadorPdI.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\procesadorPdi\ProcesadorPdIService.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\solicitud\ProcesadorSolicitud.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\solicitud\ProcesadorSolicitudService.java
