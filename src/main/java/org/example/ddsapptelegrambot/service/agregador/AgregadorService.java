@@ -1,6 +1,9 @@
 package org.example.ddsapptelegrambot.service.agregador;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.ddsapptelegrambot.dtos.HechoDTO;
+import org.example.ddsapptelegrambot.dtos.PdIDTO;
 import org.example.ddsapptelegrambot.service.procesadorPdi.ProcesadorPdI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,4 +35,19 @@ public class AgregadorService {
         sb.append("]");
         return sb.toString();
     }
+
+    public String postearHechoAFuente(String idFuente, String hecho){
+
+
+        String resultado = agregadorClient.postearHechoAFuente(idFuente,hecho);
+
+        if (resultado == null) {
+            return "No se pudo postear el hecho enviado";
+        }
+
+        return resultado;
+
+
+    }
+
 }
