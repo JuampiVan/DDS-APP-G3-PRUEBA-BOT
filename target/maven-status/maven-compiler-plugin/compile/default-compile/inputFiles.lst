@@ -1,5 +1,6 @@
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\app\BotMessenger.java
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\app\TelegramBot.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\ActualizarSolicitudCommand.java
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\AgregarPdiCommand.java
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\BotCommand.java
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\command\CommandDispatcher.java
@@ -16,6 +17,7 @@ C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\or
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\dtos\HechoDTO.java
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\dtos\PdIDTO.java
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\dtos\SolicitudDTO.java
+C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\dtos\SolicitudUpdateDTO.java
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\agregador\AgregadorClient.java
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\agregador\AgregadorService.java
 C:\Users\Jonathan Ortega\Documents\GitHub\DDS-APP-G3-PRUEBA-BOT\src\main\java\org\example\ddsapptelegrambot\service\fuente\FuenteClient.java

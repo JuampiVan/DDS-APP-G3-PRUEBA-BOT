@@ -7,7 +7,9 @@ org\example\ddsapptelegrambot\command\StartCommand.class
 org\example\ddsapptelegrambot\command\CommandDispatcher.class
 org\example\ddsapptelegrambot\app\BotMessenger.class
 org\example\ddsapptelegrambot\command\PostearHechoAFuente.class
+org\example\ddsapptelegrambot\command\ActualizarSolicitudCommand.class
 org\example\ddsapptelegrambot\dtos\SolicitudDTO.class
+org\example\ddsapptelegrambot\dtos\SolicitudUpdateDTO.class
 org\example\ddsapptelegrambot\service\fuente\FuenteClient.class
 org\example\ddsapptelegrambot\command\HechosPorColeccion.class
 org\example\ddsapptelegrambot\dtos\EstadoSolicitudBorradoEnum.class

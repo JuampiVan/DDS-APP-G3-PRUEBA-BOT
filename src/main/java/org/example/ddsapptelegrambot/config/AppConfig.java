@@ -2,13 +2,16 @@ package org.example.ddsapptelegrambot.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory; // <-- 1. Importar
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class AppConfig {
 
-    @Bean // <-- Esta anotación registra el objeto como un "Bean"
+    @Bean
     public RestTemplate restTemplate() {
-        return new RestTemplate();
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
+        return restTemplate;
     }
 }
