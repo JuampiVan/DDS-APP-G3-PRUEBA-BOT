@@ -1,5 +1,6 @@
 package org.example.ddsapptelegrambot.service.procesadorPdi;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.ddsapptelegrambot.dtos.PdIDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +91,29 @@ public class ProcesadorPdIService {
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    public String postearPdi(String pdi){
+        ObjectMapper mapper = new ObjectMapper();
+        PdIDTO pdIDTO = null;
+        try {
+            pdIDTO = mapper.readValue(pdi, PdIDTO.class);
+        } catch (JsonProcessingException e) {
+            return "Error al parsear datos";
+        }
+        if (pdi == null) {
+            return "No se pudo postear el Pdi enviado";
+        }
+
+        PdIDTO pdidto1 = pdiClient.postearPdi(pdIDTO);
+
+        if (pdidto1 == null) {
+            return "No se pudo postear el Pdi enviado";
+        }
+
+        return "Se posteo correctamente el Pdi enviado";
+
+
     }
 
 }
