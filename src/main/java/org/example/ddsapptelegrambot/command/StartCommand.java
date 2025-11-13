@@ -32,6 +32,11 @@ public class StartCommand implements BotCommand {
         sb.append("🔍 */pdi <id>*\n");
         sb.append("   Consulta un Punto de Interés (PdI).\n");
         sb.append("   _Ej: /pdi 1\n\n");
+
+        sb.append("🔍 */buscarPdi <texto> tag:<tag>*\n");
+        sb.append("   Consulta PdI por palabras clave y/o etiqueta.\n");
+        sb.append("   _Ej: /buscarPdi incendio\n");
+        sb.append("   _Ej: /buscarPdi incendio tag:CABA\n\n");
         
         sb.append("➕ */CrearSolicitud \"<id>\" \"<estado>\" \"<hechoId>\" \"<descripcion>\"*\n");
         sb.append("   Crea una nueva solicitud de borrado.\n");

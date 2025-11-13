@@ -2,6 +2,7 @@ package org.example.ddsapptelegrambot.service.procesadorPdi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.ddsapptelegrambot.dtos.PdIBusquedaDocument;
 import org.example.ddsapptelegrambot.dtos.PdIDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -112,8 +113,34 @@ public class ProcesadorPdIService {
         }
 
         return "Se posteo correctamente el Pdi enviado";
-
-
     }
 
+    public String buscarPdi(String texto, String tag) {
+        List<PdIBusquedaDocument> resultados = pdiClient.buscarPdi(texto, tag);
+
+        if (resultados == null || resultados.isEmpty()) {
+            return "🔍 No se encontraron PDIs para la búsqueda.";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("📄 *Resultados de la búsqueda:*\n\n");
+
+        for (PdIBusquedaDocument doc : resultados) {
+            sb.append("• *Hecho ID:* ").append(doc.getHechoId()).append("\n")
+                    .append("*Descripción:* ").append(doc.getDescripcion()).append("\n")
+                    .append("*Lugar:* ").append(doc.getLugar()).append("\n");
+
+            if (doc.getEtiquetas() != null && !doc.getEtiquetas().isEmpty()) {
+                sb.append("*Tags:* ").append(String.join(", ", doc.getEtiquetas())).append("\n");
+            }
+
+            if (doc.getUrlImagen() != null && !doc.getUrlImagen().isBlank()) {
+                sb.append("*Imagen:* ").append(doc.getUrlImagen()).append("\n");
+            }
+
+            sb.append("\n---\n");
+        }
+
+        return sb.toString();
+    }
 }
