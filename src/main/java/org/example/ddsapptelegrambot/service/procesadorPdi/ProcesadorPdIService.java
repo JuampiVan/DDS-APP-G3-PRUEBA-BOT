@@ -119,26 +119,30 @@ public class ProcesadorPdIService {
         List<PdIBusquedaDocument> resultados = pdiClient.buscarPdi(texto, tag);
 
         if (resultados == null || resultados.isEmpty()) {
-            return "🔍 No se encontraron PDIs para la búsqueda.";
+            return "No se encontraron PDIs para la búsqueda.";
         }
 
         StringBuilder sb = new StringBuilder();
-        sb.append("📄 *Resultados de la búsqueda:*\n\n");
+        sb.append("🔎 Resultados de la búsqueda:\n\n");
 
         for (PdIBusquedaDocument doc : resultados) {
-            sb.append("• *Hecho ID:* ").append(doc.getHechoId()).append("\n")
-                    .append("*Descripción:* ").append(doc.getDescripcion()).append("\n")
-                    .append("*Lugar:* ").append(doc.getLugar()).append("\n");
+            sb.append("🆔 Hecho: ").append(doc.getHecho_id()).append("\n")
+                    .append("📝 Descripción: ").append(doc.getDescripcion()).append("\n")
+                    .append("📍 Lugar: ").append(doc.getLugar()).append("\n");
+
+            if (doc.getOcr_resultado() != null && !doc.getOcr_resultado().isEmpty()) {
+                sb.append("🔠 OCR: ").append(doc.getOcr_resultado()).append("\n");
+            }
 
             if (doc.getEtiquetas() != null && !doc.getEtiquetas().isEmpty()) {
-                sb.append("*Tags:* ").append(String.join(", ", doc.getEtiquetas())).append("\n");
+                sb.append("🏷️ Tags: ").append(String.join(", ", doc.getEtiquetas())).append("\n");
             }
 
-            if (doc.getUrlImagen() != null && !doc.getUrlImagen().isBlank()) {
-                sb.append("*Imagen:* ").append(doc.getUrlImagen()).append("\n");
-            }
+//            if (doc.getUrl_imagen() != null && !doc.getUrl_imagen().isBlank()) {
+//                sb.append("Imagen: ").append(doc.getUrl_imagen()).append("\n");
+//            }
 
-            sb.append("\n---\n");
+            sb.append("\n------------------------------\n");
         }
 
         return sb.toString();

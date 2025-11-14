@@ -43,7 +43,7 @@ public class ActualizarSolicitudCommand implements BotCommand {
             String estado = matcher.group(2).toUpperCase();
             String descripcion = matcher.group(3);
 
-            // Llamamos al nuevo método del servicio
+            // Llamamos al nuevo metodo del servicio
             respuesta = procesadorSolicitudService.actualizarSolicitud(id, estado, descripcion);
         }
 
