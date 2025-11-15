@@ -38,7 +38,7 @@ public class StartCommand implements BotCommand {
         sb.append("   _Ej: /buscarPdi incendio\n");
         sb.append("   _Ej: /buscarPdi incendio tag:CABA\n\n");
         
-        sb.append("➕ */CrearSolicitud \"<id>\" \"<estado>\" \"<hechoId>\" \"<descripcion>\"*\n");
+        sb.append("➕ /CrearSolicitud \"<id>\" \"<estado>\" \"<hechoId>\" \"<descripcion>\"\n");
         sb.append("   Crea una nueva solicitud de borrado.\n");
         sb.append("   _Ej: /CrearSolicitud \"10\" \"CREADA\" \"hecho1\" \"Solicitud de prueba\"_\n\n");
 
@@ -46,12 +46,8 @@ public class StartCommand implements BotCommand {
         sb.append("   Modifica una solicitud existente.\n");
         sb.append("   _Ej: /actualizar_solicitud \"10\" \"VALIDADA\" \"Descripción actualizada\"_\n\n");
 
-        sb.append("➕ */agregarPdi json con el pdi\n");
+        sb.append("➕ */agregarPdi \"<contenido>\" \"<descripcion>\" \"<hecho_id>\" \"<lugar>\" \"<momento>\" \"<url_imagen>\"\n");
         sb.append("   Crea una nuevo PDI.\n");
-        sb.append("   _Ej: /agregarPdi {\n \"contenido\": \"Imagen para test\",\n\"descripcion\": \"Buenos Aires\",\n\"hecho_id\": \"hecho1\",\n" +
-                "\"lugar\": \"2025-09-23\",\n" +
-                "\"momento\": \"PDI de prueba desde fuente en render\",\n" +
-                "\"url_imagen\": \"\"}\n\n");
 
         sb.append("➕ */postearHechoAFuente ID de la fuente + json con el hecho\n");
         sb.append("   Crea un nuevo Hecho en la fuente solicitada.\n");
