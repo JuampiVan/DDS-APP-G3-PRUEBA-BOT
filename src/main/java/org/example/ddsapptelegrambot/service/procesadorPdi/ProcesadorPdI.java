@@ -1,21 +1,24 @@
 package org.example.ddsapptelegrambot.service.procesadorPdi;
 
-import org.example.ddsapptelegrambot.dtos.PdIBusquedaDocument;
 import org.example.ddsapptelegrambot.dtos.PdIDTO;
+import org.example.ddsapptelegrambot.dtos.PdIBusquedaResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Component
 public class ProcesadorPdI {
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    @Autowired
+    RestTemplate restTemplate;
+
+    //private final RestTemplate restTemplate = new RestTemplate();
     private static final String BASE_URL = "https://dds-app-procesador.onrender.com/pdis";
 
     public PdIDTO obtenerPdiPorId(Long id) {
@@ -63,30 +66,43 @@ public class ProcesadorPdI {
         }
     }
 
-    public List<PdIBusquedaDocument> buscarPdi(String texto, String tag) {
+    public PdIBusquedaResponse buscarPdi(String texto, String tag, int page) {
         try {
-            String url = BASE_URL + "/buscar?texto=" + URLEncoder.encode(texto, StandardCharsets.UTF_8);
+            UriComponentsBuilder builder = UriComponentsBuilder
+                    .fromHttpUrl(BASE_URL + "/buscar")
+                    .queryParam("texto", texto)
+                    .queryParam("page", page)
+                    .queryParam("size", 5);
+
             if (tag != null && !tag.isBlank()) {
-                url += "&tag=" + URLEncoder.encode(tag, StandardCharsets.UTF_8);
+                builder.queryParam("tag", tag);
             }
 
-            System.out.println(url);
+            System.out.println("PARSER TEXTO: " + texto);
+            System.out.println("PARSER TAG: " + tag);
 
-            ResponseEntity<List<PdIBusquedaDocument>> response = restTemplate.exchange(
+            String url = builder.toUriString();
+            System.out.println("Consultando Procesador: " + url);
+
+            ResponseEntity<PdIBusquedaResponse> response = restTemplate.exchange(
                     url,
                     HttpMethod.GET,
                     null,
-                    new ParameterizedTypeReference<List<PdIBusquedaDocument>>() {}
+                    new ParameterizedTypeReference<PdIBusquedaResponse>() {}
             );
-
+            System.out.println("LOG BODY:  " + response.getBody());
             return response.getBody();
+
         } catch (HttpClientErrorException e) {
-            System.out.println("Error en la búsqueda de PDIs: " + e.getStatusCode());
+            System.out.println("Error en búsqueda PDI: " + e.getStatusCode());
             return null;
+
         } catch (Exception e) {
-            System.out.println("Error inesperado en búsqueda: " + e.getMessage());
+            System.out.println("Error inesperado en búsqueda PDI: " + e.getMessage());
+            e.printStackTrace();
             return null;
         }
     }
+
 
 }

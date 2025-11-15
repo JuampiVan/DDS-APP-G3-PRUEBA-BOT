@@ -3,6 +3,7 @@ package org.example.ddsapptelegrambot.service.procesadorPdi;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.ddsapptelegrambot.dtos.PdIBusquedaDocument;
+import org.example.ddsapptelegrambot.dtos.PdIBusquedaResponse;
 import org.example.ddsapptelegrambot.dtos.PdIDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -115,36 +116,49 @@ public class ProcesadorPdIService {
         return "Se posteo correctamente el Pdi enviado";
     }
 
-    public String buscarPdi(String texto, String tag) {
-        List<PdIBusquedaDocument> resultados = pdiClient.buscarPdi(texto, tag);
+    public PdIBusquedaResponse buscarPdiRaw(String texto, String tag, int page) {
+        System.out.println("buscarPdiRaw LO USO");
+        return pdiClient.buscarPdi(texto, tag, page);
+    }
 
-        if (resultados == null || resultados.isEmpty()) {
+
+
+    public String formatearResultados(PdIBusquedaResponse response) {
+        if (response == null || response.getItems() == null || response.getItems().isEmpty()) {
             return "No se encontraron PDIs para la búsqueda.";
         }
 
         StringBuilder sb = new StringBuilder();
-        sb.append("🔎 Resultados de la búsqueda:\n\n");
+        sb.append("🔎 *Resultados de la búsqueda*\n\n");
 
-        for (PdIBusquedaDocument doc : resultados) {
-            sb.append("🆔 Hecho: ").append(doc.getHecho_id()).append("\n")
-                    .append("📝 Descripción: ").append(doc.getDescripcion()).append("\n")
-                    .append("📍 Lugar: ").append(doc.getLugar()).append("\n");
+        for (PdIBusquedaDocument doc : response.getItems()) {
+            sb.append("🆔 *Hecho:* ").append(doc.getHecho_id()).append("\n")
+                    .append("📝 *Descripción:* ").append(doc.getDescripcion()).append("\n")
+                    .append("📍 *Lugar:* ").append(doc.getLugar()).append("\n");
 
             if (doc.getOcr_resultado() != null && !doc.getOcr_resultado().isEmpty()) {
-                sb.append("🔠 OCR: ").append(doc.getOcr_resultado()).append("\n");
+                sb.append("🔠 *OCR:* ").append(doc.getOcr_resultado()).append("\n");
             }
 
             if (doc.getEtiquetas() != null && !doc.getEtiquetas().isEmpty()) {
-                sb.append("🏷️ Tags: ").append(String.join(", ", doc.getEtiquetas())).append("\n");
+                sb.append("🏷️ *Tags:* ").append(String.join(", ", doc.getEtiquetas())).append("\n");
             }
-
-//            if (doc.getUrl_imagen() != null && !doc.getUrl_imagen().isBlank()) {
-//                sb.append("Imagen: ").append(doc.getUrl_imagen()).append("\n");
-//            }
 
             sb.append("\n------------------------------\n");
         }
 
+        sb.append("\n📄 *Página ")
+                .append(response.getCurrentPage() + 1)
+                .append(" de ")
+                .append(response.getTotalPages())
+                .append("*\n");
+
+        sb.append("📊 *Total ítems encontrados:* ")
+                .append(response.getTotalItems())
+                .append("\n");
+
         return sb.toString();
     }
+
+
 }
